@@ -30,7 +30,7 @@ test_loader = g.data.DataLoader(
     test_dataset, batch_size=batch_size, shuffle=False)
 
 # define model
-lenet = g.nn.HybridSequential(prefix='lenet_')
+lenet = g.nn.Sequential(prefix='lenet_')
 with lenet.name_scope():
     lenet.add(g.nn.Conv2D(6, 3, strides=1, padding=1, activation='relu'))
     lenet.add(g.nn.MaxPool2D(2, 2))
