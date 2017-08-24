@@ -32,9 +32,9 @@ test_loader = g.data.DataLoader(
 # define model
 lenet = g.nn.Sequential(prefix='lenet_')
 with lenet.name_scope():
-    lenet.add(g.nn.Conv2D(6, 3, strides=1, padding=1, activation='relu'))
+    lenet.add(g.nn.Conv2D(6, 3, strides=1, padding=1))
     lenet.add(g.nn.MaxPool2D(2, 2))
-    lenet.add(g.nn.Conv2D(16, 5, strides=1, activation='relu'))
+    lenet.add(g.nn.Conv2D(16, 5, strides=1))
     lenet.add(g.nn.MaxPool2D(2, 2))
     lenet.add(g.nn.Flatten())
     lenet.add(g.nn.Dense(120))
